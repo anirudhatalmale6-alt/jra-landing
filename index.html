@@ -82,8 +82,14 @@ a{color:inherit}
 .hero::after{content:'';position:absolute;width:640px;height:640px;border-radius:50%;
   background:radial-gradient(circle,rgba(200,162,74,.30),transparent 66%);top:-260px;right:-190px}
 .hero .grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:52px;
-  align-items:center;padding:74px 0 84px}
-@media(max-width:940px){.hero .grid{grid-template-columns:1fr;gap:34px;padding:50px 0 58px;text-align:center}}
+  align-items:center;padding:8px 0 84px}
+@media(max-width:940px){.hero .grid{grid-template-columns:1fr;gap:34px;padding:6px 0 58px;text-align:center}}
+/* The logo leads the hero, centred. Reversed to white so it sits on the navy
+   without the white box the original JPG carries. */
+.hero-logo{position:relative;z-index:1;height:auto;width:min(430px,72%);margin:0 auto;padding-top:58px;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+@media(max-width:940px){.hero-logo{width:min(330px,82%);padding-top:40px}}
+@media(max-width:520px){.hero-logo{width:86%;padding-top:34px}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:8px 17px;font-size:13.5px;font-weight:700;
   letter-spacing:1.1px;text-transform:uppercase;margin-bottom:22px}
@@ -96,7 +102,6 @@ a{color:inherit}
 @media(max-width:940px){.hero-actions{justify-content:center}}
 
 .hero-card{background:#fff;border-radius:18px;padding:34px 30px;box-shadow:0 30px 70px -34px rgba(0,0,0,.7)}
-.hero-card img{height:96px;width:auto;margin:0 auto 22px}
 .hero-card h3{font-family:var(--serif);font-size:19px;color:var(--navy);text-align:center;margin-bottom:18px}
 .hero-list{list-style:none;display:grid;gap:12px}
 .hero-list li{display:flex;gap:11px;align-items:flex-start;font-size:15.2px;color:var(--ink);text-align:left}
@@ -223,6 +228,10 @@ section.tint{background:var(--bg)}
 
 <!-- ══ 1. HERO ══ -->
 <div class="hero" id="top">
+  <div class="wrap">
+    <img class="hero-logo" src="assets/jra-logo-white.png"
+         alt="JRA Interpretation and Translation Services, LLC">
+  </div>
   <div class="wrap grid">
     <div>
       <span class="eyebrow">Certified &amp; Credentialed Professionals</span>
@@ -236,7 +245,6 @@ section.tint{background:var(--bg)}
       </div>
     </div>
     <div class="hero-card">
-      <img src="assets/jra-logo.jpg" alt="JRA Interpretation and Translation Services, LLC">
       <h3>Breaking Language Barriers</h3>
       <ul class="hero-list">
         <li>Certified &amp; credentialed interpreters and translators</li>
